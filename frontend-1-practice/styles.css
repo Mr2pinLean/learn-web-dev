@@ -219,7 +219,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url("фон.png");
+  background-image: url("images/фон.png");
   background-repeat: repeat;
   background-position: center top;
   background-size: 460px auto;
