@@ -1,7 +1,13 @@
-/* Стили страницы выбора даты и времени */
+
+/* =========================================
+   БАРБЕРШОП «ЧЁРНАЯ БОРОДА»
+   Размер основного макета: 867 × 1615 px
+   ========================================= */
+
+/* Цветовая палитра */
 
 :root {
-  --color-bg-dark: #121212;
+  --color-bg-dark: #171717;
   --color-card: #1c1c1c;
   --color-accent: #e8531e;
   --color-text: #ffffff;
@@ -9,10 +15,21 @@
   --color-light: #f1f1f1;
 }
 
+/* Общие настройки */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-bg-dark);
+}
+
+body {
+  min-height: 100vh;
 }
 
 ul {
@@ -39,73 +56,94 @@ img {
   position: absolute;
   width: 1px;
   height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
+  border: 0;
 }
 
 .body {
-  min-height: 100vh;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   background: var(--color-bg-dark);
   color: var(--color-text);
 }
 
+/* =========================================
+   ОСНОВНОЙ ФРЕЙМ — 867 × 1615
+   ========================================= */
+
 .page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  max-width: 480px;
+  width: 867px;
+  min-height: 1615px;
   margin: 0 auto;
+  background: var(--color-bg-dark);
 }
 
-/* ---------- Логотип ---------- */
+/* =========================================
+   ЛОГОТИП
+   ========================================= */
 
 .logo {
   display: flex;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
   overflow: hidden;
+  border-radius: 50%;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s ease;
 }
 
 .logo:hover {
-  box-shadow: 0 0 0 2px var(--color-accent), 0 0 10px rgba(232, 83, 30, 0.6);
+  box-shadow:
+    0 0 0 2px var(--color-accent),
+    0 0 10px rgba(232, 83, 30, 0.6);
 }
 
 .logo__img {
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
 }
 
 .logo--footer {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
 }
 
-/* ---------- Шапка ---------- */
+/* =========================================
+   ШАПКА — 867 × 120
+   ========================================= */
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 8px 24px;
-  background: #000;
+  justify-content: space-between;
+  flex: 0 0 120px;
+  width: 867px;
+  height: 120px;
+  padding: 0 40px;
+  background: #000000;
 }
 
 .nav {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .burger {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 6px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -115,103 +153,133 @@ img {
   height: 3px;
   border-radius: 2px;
   background: var(--color-text);
-  transition: background 0.2s;
+  transition: background 0.2s ease;
 }
 
 .burger:hover .burger__line {
   background: var(--color-accent);
 }
 
-/* ---------- Главная область ---------- */
+/* =========================================
+   ОСНОВНАЯ ОБЛАСТЬ
+   ========================================= */
 
 .main {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0 0 auto;
+  width: 867px;
 }
 
-/* ---------- Hero ---------- */
+/* =========================================
+   БАННЕР — 867 × 400
+   ========================================= */
 
 .hero {
   display: flex;
-  background: #000;
+  flex: 0 0 400px;
+  width: 867px;
+  height: 400px;
+  overflow: hidden;
+  background: #000000;
 }
 
 .hero__image {
-  width: 100%;
-  height: auto;
+  display: block;
+  width: 867px;
+  height: 400px;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* ---------- Блок бронирования ---------- */
+/* =========================================
+   БЛОК БРОНИРОВАНИЯ — 867 × 776
+   ========================================= */
 
 .booking {
   position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 28px;
-  padding: 28px 24px 70px;
-  background-color: #ffffff;
+  flex: 0 0 776px;
+  width: 867px;
+  height: 776px;
+  padding: 40px 0 75px;
   overflow: hidden;
+  background: #ffffff;
 }
 
-/* узор на фоне, прозрачность 50% */
+/* Узор на фоне */
+
 .booking::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   background-image: url("фон.png");
-  background-size: 460px auto;
   background-repeat: repeat;
+  background-position: center top;
+  background-size: 460px auto;
   opacity: 0.5;
+  pointer-events: none;
 }
 
-/* ---------- Календарь ---------- */
+/* =========================================
+   КАЛЕНДАРЬ — 497 × 290
+   ========================================= */
 
 .calendar {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  width: 100%;
-  max-width: 256px;
-  padding: 14px 12px 16px;
-  border-radius: 10px;
+  gap: 18px;
+  flex: 0 0 290px;
+  width: 497px;
+  height: 290px;
+  max-width: none;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 12px;
   background: var(--color-card);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .calendar__head {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .calendar__title {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .calendar__arrows {
   display: flex;
-  gap: 6px;
+  gap: 10px;
 }
 
 .calendar__arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   background: var(--color-light);
-  color: #000;
-  font-size: 14px;
+  color: #000000;
+  font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .calendar__arrow:hover {
@@ -219,39 +287,46 @@ img {
   color: var(--color-text);
 }
 
+/* Дни недели */
+
 .calendar__weekdays {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
   text-align: center;
 }
 
 .calendar__weekday {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 600;
 }
 
+/* Числа календаря */
+
 .calendar__days {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 8px 6px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .day-cell {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20px;
-  border-radius: 10px;
+  height: 24px;
+  border-radius: 6px;
   background: var(--color-light);
-  color: #000;
-  font-size: 9px;
+  color: #000000;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.day-cell:hover {
+.day-cell:not(.disabled):hover {
   background: var(--color-accent);
   color: var(--color-text);
   box-shadow: 0 0 8px rgba(232, 83, 30, 0.6);
@@ -266,41 +341,42 @@ img {
   background: #d8d8d8;
   color: #9d9d9d;
   opacity: 0.6;
-  cursor: default;
+  cursor: not-allowed;
 }
 
-.day-cell.disabled:hover {
-  background: #d8d8d8;
-  color: #9d9d9d;
-  box-shadow: none;
-}
-
-/* ---------- Слоты времени ---------- */
+/* =========================================
+   ВЫБОР ВРЕМЕНИ — 385 × 319
+   ========================================= */
 
 .slots {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  width: 100%;
-  max-width: 310px;
-  padding: 16px 12px 18px;
+  gap: 18px;
+  flex: 0 0 319px;
+  width: 385px;
+  height: 319px;
+  max-width: none;
+  padding: 20px;
   border: 1px solid var(--color-accent);
-  border-radius: 8px;
+  border-radius: 12px;
   background: var(--color-card);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .slots__title {
   padding-left: 2px;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
 }
+
+/* Сетка времени */
 
 .slots__list {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 12px;
 }
 
@@ -315,17 +391,20 @@ img {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 40px;
+  height: 42px;
   border-radius: 8px;
   background: var(--color-text);
-  color: #000;
-  font-size: 10px;
+  color: #000000;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.slot:hover {
+.slot:not(.busy):hover {
   background: var(--color-accent);
   color: var(--color-text);
   box-shadow: 0 0 8px rgba(232, 83, 30, 0.6);
@@ -338,28 +417,32 @@ img {
   cursor: not-allowed;
 }
 
-.slot.busy:hover {
-  background: var(--color-light);
-  color: #8a8a8a;
-  box-shadow: none;
-}
-
 .slot__time {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .slot__note {
-  font-size: 6px;
+  font-size: 8px;
   font-weight: 400;
 }
 
-/* ---------- Нижняя панель ---------- */
+/* Выбранное время */
+
+.slot.selected {
+  background: var(--color-accent);
+  color: var(--color-text);
+  box-shadow: 0 0 8px rgba(232, 83, 30, 0.5);
+}
+
+/* =========================================
+   КНОПКА «ДАЛЕЕ»
+   ========================================= */
 
 .bottom-bar {
   position: absolute;
-  z-index: 1;
-  right: 10px;
-  bottom: 8px;
+  z-index: 2;
+  right: 30px;
+  bottom: 20px;
   display: flex;
   justify-content: flex-end;
 }
@@ -368,15 +451,20 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 24px;
-  border-radius: 10px;
+  min-width: 140px;
+  min-height: 46px;
+  padding: 12px 24px;
+  border-radius: 8px;
   background: var(--color-accent);
   color: var(--color-text);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  transition: background 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .next-button:hover {
@@ -384,86 +472,112 @@ img {
   box-shadow: 0 6px 16px rgba(232, 83, 30, 0.5);
 }
 
-/* ---------- Подвал ---------- */
+.next-button:active {
+  transform: scale(0.98);
+}
+
+/* =========================================
+   ПОДВАЛ — 867 × 320
+   ========================================= */
 
 .footer {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 28px 24px 18px;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 0 0 320px;
+  width: 867px;
+  height: 320px;
+  padding: 35px 40px 20px;
   background: #0a0a0a;
 }
 
 .footer__top {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
+  gap: 30px;
 }
 
 .footer__brand {
   display: flex;
   flex-direction: column;
-  width: 90px;
-}
-
-.footer__tagline {
-  font-size: 9px;
+  flex-shrink: 0;
+  width: 100px;
 }
 
 .footer__info {
   display: flex;
   flex: 1;
-  gap: 40px;
+  justify-content: flex-end;
+  gap: 55px;
 }
 
 .footer__block {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .footer__heading {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .footer__text,
 .footer__phone {
-  font-size: 8px;
-  white-space: nowrap;
+  font-size: 11px;
+  line-height: 1.6;
 }
 
 .footer__phone {
   font-weight: 700;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .footer__phone:hover {
   color: var(--color-accent);
 }
 
+.footer__tagline {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 .footer__bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-top: 14px;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 16px;
   border-top: 1px solid #2a2a2a;
-  font-size: 7px;
   color: var(--color-muted);
 }
 
-.footer__copy {
-  font-size: 7px;
+.footer__copy,
+.footer__link {
+  font-size: 10px;
 }
 
 .footer__link {
   text-decoration: underline;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .footer__link:hover {
   color: var(--color-accent);
+}
+
+/* =========================================
+   АДАПТАЦИЯ ДЛЯ УЗКОГО ЭКРАНА
+   На десктопе сохраняется ширина 867 px
+   ========================================= */
+
+@media (max-width: 867px) {
+  .page {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

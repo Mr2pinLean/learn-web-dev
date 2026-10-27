@@ -1,168 +1,222 @@
+
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="body">
-    <div class="page">
-      <header class="header">
-        <a class="logo" href="#">
-          <img class="logo__img" src="лого.png" alt="Барбершоп «Чёрная борода»" />
-        </a>
-        <nav class="nav">
-          <button class="burger" type="button" aria-label="Меню">
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
-          </button>
-        </nav>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор даты и времени — Чёрная борода</title>
 
-      <main class="main">
-        <section class="hero">
-          <h1 class="visually-hidden">Дата и время</h1>
-          <img
-            class="hero__image"
-            src="датаивремя.png"
-            alt="Дата и время. Удобная дата — выберите подходящий день. Удобное время — выберите время визита"
-          />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body">
+  <div class="page">
+
+    <!-- Шапка -->
+    <header class="header">
+      <a class="logo" href="#" aria-label="На главную">
+        <img
+          class="logo__img"
+          src="лого.png"
+          alt="Барбершоп «Чёрная борода»"
+        >
+      </a>
+
+      <nav class="nav" aria-label="Главная навигация">
+        <button class="burger" type="button" aria-label="Открыть меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="main">
+
+      <!-- Баннер -->
+      <section class="hero">
+        <h1 class="visually-hidden">Выбор даты и времени</h1>
+
+        <img
+          class="hero__image"
+          src="датаивремя.png"
+          alt="Дата и время. Выберите подходящий день и время визита"
+        >
+      </section>
+
+      <!-- Блок бронирования -->
+      <section class="booking" aria-label="Выбор даты и времени">
+
+        <!-- Календарь -->
+        <section class="calendar" aria-label="Календарь">
+          <div class="calendar__head">
+            <h2 class="calendar__title">Июнь 2025</h2>
+
+            <div class="calendar__arrows">
+              <button
+                class="calendar__arrow"
+                type="button"
+                aria-label="Предыдущий месяц"
+              >‹</button>
+
+              <button
+                class="calendar__arrow"
+                type="button"
+                aria-label="Следующий месяц"
+              >›</button>
+            </div>
+          </div>
+
+          <ul class="calendar__weekdays">
+            <li class="calendar__weekday">Пн</li>
+            <li class="calendar__weekday">Вт</li>
+            <li class="calendar__weekday">Ср</li>
+            <li class="calendar__weekday">Чт</li>
+            <li class="calendar__weekday">Пт</li>
+            <li class="calendar__weekday">Сб</li>
+            <li class="calendar__weekday">Вс</li>
+          </ul>
+
+          <ul class="calendar__days">
+            <li class="day-cell disabled">26</li>
+            <li class="day-cell disabled">27</li>
+            <li class="day-cell disabled">28</li>
+            <li class="day-cell disabled">29</li>
+            <li class="day-cell disabled">30</li>
+            <li class="day-cell disabled">31</li>
+            <li class="day-cell disabled">1</li>
+
+            <li class="day-cell">2</li>
+            <li class="day-cell">3</li>
+            <li class="day-cell">4</li>
+            <li class="day-cell">5</li>
+            <li class="day-cell">6</li>
+            <li class="day-cell disabled">7</li>
+            <li class="day-cell disabled">8</li>
+
+            <li class="day-cell">9</li>
+            <li class="day-cell">10</li>
+            <li class="day-cell">11</li>
+            <li class="day-cell">12</li>
+            <li class="day-cell">13</li>
+            <li class="day-cell">14</li>
+            <li class="day-cell">15</li>
+
+            <li class="day-cell">16</li>
+            <li class="day-cell">17</li>
+            <li class="day-cell">18</li>
+            <li class="day-cell">19</li>
+            <li class="day-cell">20</li>
+            <li class="day-cell">21</li>
+            <li class="day-cell">22</li>
+          </ul>
         </section>
 
-        <div class="booking">
-          <section class="calendar">
-            <div class="calendar__head">
-              <h2 class="calendar__title">Июнь 2025</h2>
-              <div class="calendar__arrows">
-                <button class="calendar__arrow" type="button" aria-label="Предыдущий месяц">‹</button>
-                <button class="calendar__arrow" type="button" aria-label="Следующий месяц">›</button>
-              </div>
-            </div>
+        <!-- Выбор времени -->
+        <section class="slots" aria-label="Доступное время">
+          <h2 class="slots__title">Доступное время</h2>
 
-            <ul class="calendar__weekdays">
-              <li class="calendar__weekday">Пн</li>
-              <li class="calendar__weekday">Вт</li>
-              <li class="calendar__weekday">Ср</li>
-              <li class="calendar__weekday">Чт</li>
-              <li class="calendar__weekday">Пт</li>
-              <li class="calendar__weekday">Сб</li>
-              <li class="calendar__weekday">Вс</li>
-            </ul>
+          <ul class="slots__list">
+            <li class="slots__item">
+              <button class="slot" type="button">10:00</button>
+            </li>
 
-            <ul class="calendar__days">
-              <li class="day-cell disabled">26</li>
-              <li class="day-cell disabled">27</li>
-              <li class="day-cell disabled">28</li>
-              <li class="day-cell disabled">29</li>
-              <li class="day-cell disabled">30</li>
-              <li class="day-cell disabled">31</li>
-              <li class="day-cell disabled">1</li>
+            <li class="slots__item">
+              <button class="slot busy" type="button" disabled>
+                <span class="slot__time">11:00</span>
+                <span class="slot__note">Занято</span>
+              </button>
+            </li>
 
-              <li class="day-cell">2</li>
-              <li class="day-cell">3</li>
-              <li class="day-cell">4</li>
-              <li class="day-cell">5</li>
-              <li class="day-cell">6</li>
-              <li class="day-cell disabled">7</li>
-              <li class="day-cell disabled">8</li>
+            <li class="slots__item">
+              <button class="slot" type="button">12:00</button>
+            </li>
 
-              <li class="day-cell">9</li>
-              <li class="day-cell">10</li>
-              <li class="day-cell">11</li>
-              <li class="day-cell">12</li>
-              <li class="day-cell">13</li>
-              <li class="day-cell">14</li>
-              <li class="day-cell">15</li>
+            <li class="slots__item">
+              <button class="slot busy" type="button" disabled>
+                <span class="slot__time">13:00</span>
+                <span class="slot__note">Занято</span>
+              </button>
+            </li>
 
-              <li class="day-cell">16</li>
-              <li class="day-cell">17</li>
-              <li class="day-cell">18</li>
-              <li class="day-cell">19</li>
-              <li class="day-cell">20</li>
-              <li class="day-cell">21</li>
-              <li class="day-cell">22</li>
-            </ul>
-          </section>
+            <li class="slots__item">
+              <button class="slot" type="button">14:00</button>
+            </li>
 
-          <section class="slots">
-            <h2 class="slots__title">Доступное время</h2>
-            <ul class="slots__list">
-              <li class="slots__item">
-                <button class="slot" type="button">10:00</button>
-              </li>
-              <li class="slots__item">
-                <button class="slot busy" type="button" disabled>
-                  <span class="slot__time">11:00</span>
-                  <span class="slot__note">Занято</span>
-                </button>
-              </li>
-              <li class="slots__item">
-                <button class="slot" type="button">12:00</button>
-              </li>
-              <li class="slots__item">
-                <button class="slot busy" type="button" disabled>
-                  <span class="slot__time">13:00</span>
-                  <span class="slot__note">Занято</span>
-                </button>
-              </li>
-              <li class="slots__item">
-                <button class="slot" type="button">14:00</button>
-              </li>
-              <li class="slots__item">
-                <button class="slot" type="button">15:00</button>
-              </li>
-              <li class="slots__item">
-                <button class="slot" type="button">16:00</button>
-              </li>
-              <li class="slots__item">
-                <button class="slot" type="button">17:00</button>
-              </li>
-            </ul>
-          </section>
+            <li class="slots__item">
+              <button class="slot" type="button">15:00</button>
+            </li>
 
-          <div class="bottom-bar">
-            <a class="next-button" href="#">Далее</a>
-          </div>
+            <li class="slots__item">
+              <button class="slot" type="button">16:00</button>
+            </li>
+
+            <li class="slots__item">
+              <button class="slot" type="button">17:00</button>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Кнопка перехода -->
+        <div class="bottom-bar">
+          <a class="next-button" href="#">Далее</a>
         </div>
-      </main>
+      </section>
+    </main>
 
-      <footer class="footer">
-        <div class="footer__top">
-          <div class="footer__brand">
-            <a class="logo logo--footer" href="#">
-              <img class="logo__img" src="лого.png" alt="Барбершоп «Чёрная борода»" />
+    <!-- Подвал -->
+    <footer class="footer">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <a class="logo logo--footer" href="#" aria-label="На главную">
+            <img
+              class="logo__img"
+              src="лого.png"
+              alt="Барбершоп «Чёрная борода»"
+            >
+          </a>
+        </div>
+
+        <div class="footer__info">
+
+          <section class="footer__block">
+            <h3 class="footer__heading">Контакты</h3>
+            <p class="footer__text"> г. Москва, ул. Садовая, 15</p>
+            <a class="footer__phone" href="tel:+74951234567">
+               +7 495 123 45 67
             </a>
-          </div>
+          </section>
 
-          <div class="footer__info">
-            <section class="footer__block">
-              <h3 class="footer__heading">Контакты</h3>
-              <p class="footer__text">📍 ул. Садовая, 15, Москва</p>
-              <a class="footer__phone" href="tel:+74951234567">📞 +7 (495) 123-45-67</a>
-            </section>
-            <section class="footer__block">
-              <h3 class="footer__heading">Режим работы</h3>
-              <p class="footer__text">Пн–Пт: 9:00 – 21:00</p>
-              <p class="footer__text">Сб–Вс: 10:00 – 19:00</p>
-            </section>
-          </div>
+          <section class="footer__block">
+            <h3 class="footer__heading">Режим работы</h3>
+            <p class="footer__text">Пн–Пт: 9:00–21:00</p>
+            <p class="footer__text">Сб–Вс: 10:00–19:00</p>
+          </section>
+
         </div>
+      </div>
 
-        <p class="footer__tagline">Предоставляем услуги и немного стрижем</p>
+      <p class="footer__tagline">
+        Предоставляем услуги и немного стрижём
+      </p>
 
-        <div class="footer__bottom">
-          <p class="footer__copy">© 2026. Все права защищены.</p>
-          <a class="footer__link" href="#">Политика конфиденциальности</a>
-        </div>
-      </footer>
-    </div>
-  </body>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026. Все права защищены.</p>
+        <a class="footer__link" href="#">
+          Политика конфиденциальности
+        </a>
+      </div>
+    </footer>
+
+  </div>
+</body>
 </html>
