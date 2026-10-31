@@ -19,18 +19,13 @@
 <body class="body">
   <div class="page">
 
-    <!-- Шапка -->
     <header class="header">
       <a class="logo" href="#" aria-label="На главную">
-        <img
-          class="logo__img"
-          src="images/лого.png"
-          alt="Барбершоп «Чёрная борода»"
-        />
+        <img class="logo__img" src="images/лого.png" alt="Логотип барбершопа">
       </a>
 
       <nav class="nav" aria-label="Главная навигация">
-        <button class="burger" type="button" aria-label="Открыть меню">
+        <button class="burger" type="button" aria-label="Меню">
           <span class="burger__line"></span>
           <span class="burger__line"></span>
           <span class="burger__line"></span>
@@ -38,161 +33,141 @@
       </nav>
     </header>
 
-    <!-- Основное содержимое -->
     <main class="main">
 
-      <!-- Баннер -->
       <section class="hero">
         <h1 class="visually-hidden">Выбор даты и времени</h1>
-
         <img
           class="hero__image"
           src="images/датаивремя.png"
-          alt="Дата и время"
-        />
+          alt="Выберите удобную дату и время визита"
+        >
       </section>
 
-      <!-- Блок бронирования -->
       <section class="booking" aria-label="Выбор даты и времени">
 
-        <!-- Календарь -->
         <section class="calendar" aria-label="Календарь">
           <div class="calendar__head">
             <h2 class="calendar__title">Июнь 2025</h2>
 
             <div class="calendar__arrows">
-              <button
-                class="calendar__arrow"
-                type="button"
-                aria-label="Предыдущий месяц"
-              >‹</button>
-
-              <button
-                class="calendar__arrow"
-                type="button"
-                aria-label="Следующий месяц"
-              >›</button>
+              <button class="calendar__arrow" type="button"
+                aria-label="Предыдущий месяц">‹</button>
+              <button class="calendar__arrow" type="button"
+                aria-label="Следующий месяц">›</button>
             </div>
           </div>
 
           <ul class="calendar__weekdays">
-            <li class="calendar__weekday">Пн</li>
-            <li class="calendar__weekday">Вт</li>
-            <li class="calendar__weekday">Ср</li>
-            <li class="calendar__weekday">Чт</li>
-            <li class="calendar__weekday">Пт</li>
-            <li class="calendar__weekday">Сб</li>
-            <li class="calendar__weekday">Вс</li>
+            <li>Пн</li>
+            <li>Вт</li>
+            <li>Ср</li>
+            <li>Чт</li>
+            <li>Пт</li>
+            <li>Сб</li>
+            <li>Вс</li>
           </ul>
 
           <ul class="calendar__days">
-            <li class="day-cell disabled">26</li>
-            <li class="day-cell disabled">27</li>
-            <li class="day-cell disabled">28</li>
-            <li class="day-cell disabled">29</li>
-            <li class="day-cell disabled">30</li>
-            <li class="day-cell disabled">31</li>
-            <li class="day-cell disabled">1</li>
+            <li><button class="day-cell outside" disabled>26</button></li>
+            <li><button class="day-cell outside" disabled>27</button></li>
+            <li><button class="day-cell outside" disabled>28</button></li>
+            <li><button class="day-cell outside" disabled>29</button></li>
+            <li><button class="day-cell outside" disabled>30</button></li>
+            <li><button class="day-cell outside" disabled>31</button></li>
+            <li><button class="day-cell" data-date="1">1</button></li>
 
-            <li class="day-cell">2</li>
-            <li class="day-cell">3</li>
-            <li class="day-cell">4</li>
-            <li class="day-cell">5</li>
-            <li class="day-cell">6</li>
-            <li class="day-cell disabled">7</li>
-            <li class="day-cell disabled">8</li>
+            <li><button class="day-cell" data-date="2">2</button></li>
+            <li><button class="day-cell" data-date="3">3</button></li>
+            <li><button class="day-cell" data-date="4">4</button></li>
+            <li><button class="day-cell" data-date="5">5</button></li>
+            <li><button class="day-cell" data-date="6">6</button></li>
+            <li><button class="day-cell disabled" disabled>7</button></li>
+            <li><button class="day-cell disabled" disabled>8</button></li>
 
-            <li class="day-cell">9</li>
-            <li class="day-cell">10</li>
-            <li class="day-cell">11</li>
-            <li class="day-cell">12</li>
-            <li class="day-cell">13</li>
-            <li class="day-cell">14</li>
-            <li class="day-cell">15</li>
+            <li><button class="day-cell" data-date="9">9</button></li>
+            <li><button class="day-cell" data-date="10">10</button></li>
+            <li><button class="day-cell" data-date="11">11</button></li>
+            <li><button class="day-cell" data-date="12">12</button></li>
+            <li><button class="day-cell" data-date="13">13</button></li>
+            <li><button class="day-cell" data-date="14">14</button></li>
+            <li><button class="day-cell" data-date="15">15</button></li>
 
-            <li class="day-cell">16</li>
-            <li class="day-cell">17</li>
-            <li class="day-cell">18</li>
-            <li class="day-cell">19</li>
-            <li class="day-cell">20</li>
-            <li class="day-cell">21</li>
-            <li class="day-cell">22</li>
+            <li><button class="day-cell" data-date="16">16</button></li>
+            <li><button class="day-cell" data-date="17">17</button></li>
+            <li><button class="day-cell selected" data-date="18"
+              aria-pressed="true">18</button></li>
+            <li><button class="day-cell" data-date="19">19</button></li>
+            <li><button class="day-cell" data-date="20">20</button></li>
+            <li><button class="day-cell" data-date="21">21</button></li>
+            <li><button class="day-cell" data-date="22">22</button></li>
+
+            <li><button class="day-cell" data-date="23">23</button></li>
+            <li><button class="day-cell" data-date="24">24</button></li>
+            <li><button class="day-cell" data-date="25">25</button></li>
+            <li><button class="day-cell" data-date="26">26</button></li>
+            <li><button class="day-cell" data-date="27">27</button></li>
+            <li><button class="day-cell" data-date="28">28</button></li>
+            <li><button class="day-cell" data-date="29">29</button></li>
+
+            <li><button class="day-cell" data-date="30">30</button></li>
           </ul>
         </section>
 
-        <!-- Выбор времени -->
         <section class="slots" aria-label="Доступное время">
           <h2 class="slots__title">Доступное время</h2>
 
           <ul class="slots__list">
-            <li class="slots__item">
-              <button class="slot" type="button">10:00</button>
-            </li>
+            <li><button class="slot" data-time="10:00">10:00</button></li>
 
-            <li class="slots__item">
-              <button class="slot busy" type="button" disabled>
-                <span class="slot__time">11:00</span>
+            <li>
+              <button class="slot busy" disabled>
+                <span>11:00</span>
                 <span class="slot__note">Занято</span>
               </button>
             </li>
 
-            <li class="slots__item">
-              <button class="slot" type="button">12:00</button>
-            </li>
+            <li><button class="slot selected" data-time="12:00"
+              aria-pressed="true">12:00</button></li>
 
-            <li class="slots__item">
-              <button class="slot busy" type="button" disabled>
-                <span class="slot__time">13:00</span>
+            <li>
+              <button class="slot busy" disabled>
+                <span>13:00</span>
                 <span class="slot__note">Занято</span>
               </button>
             </li>
 
-            <li class="slots__item">
-              <button class="slot" type="button">14:00</button>
-            </li>
-
-            <li class="slots__item">
-              <button class="slot" type="button">15:00</button>
-            </li>
-
-            <li class="slots__item">
-              <button class="slot" type="button">16:00</button>
-            </li>
-
-            <li class="slots__item">
-              <button class="slot" type="button">17:00</button>
-            </li>
+            <li><button class="slot" data-time="14:00">14:00</button></li>
+            <li><button class="slot" data-time="15:00">15:00</button></li>
+            <li><button class="slot" data-time="16:00">16:00</button></li>
+            <li><button class="slot" data-time="17:00">17:00</button></li>
           </ul>
         </section>
 
-        <!-- Кнопка перехода -->
         <div class="bottom-bar">
+          <p class="booking-summary" aria-live="polite">
+            Выбрано: <strong id="booking-summary">18 июня, 12:00</strong>
+          </p>
           <a class="next-button" href="#">Далее</a>
         </div>
+
       </section>
     </main>
 
-    <!-- Подвал -->
     <footer class="footer">
       <div class="footer__top">
-
         <div class="footer__brand">
           <a class="logo logo--footer" href="#" aria-label="На главную">
-            <img
-              class="logo__img"
-              src="images/лого.png"
-              alt="Барбершоп «Чёрная борода»"
-            />    
+            <img class="logo__img" src="images/лого.png" alt="Логотип барбершопа">
           </a>
         </div>
 
         <div class="footer__info">
-
           <section class="footer__block">
             <h3 class="footer__heading">Контакты</h3>
-            <p class="footer__text"> г. Москва, ул. Садовая, 15</p>
+            <p class="footer__text">📍 г. Москва, ул. Садовая, 15</p>
             <a class="footer__phone" href="tel:+74951234567">
-               +7 495 123 45 67
+              📞 +7 495 123 45 67
             </a>
           </section>
 
@@ -201,7 +176,6 @@
             <p class="footer__text">Пн–Пт: 9:00–21:00</p>
             <p class="footer__text">Сб–Вс: 10:00–19:00</p>
           </section>
-
         </div>
       </div>
 
@@ -211,12 +185,53 @@
 
       <div class="footer__bottom">
         <p class="footer__copy">© 2026. Все права защищены.</p>
-        <a class="footer__link" href="#">
-          Политика конфиденциальности
-        </a>
+        <a class="footer__link" href="#">Политика конфиденциальности</a>
       </div>
     </footer>
 
   </div>
+
+  <script>
+    const dateButtons = document.querySelectorAll(".day-cell[data-date]");
+    const timeButtons = document.querySelectorAll(".slot[data-time]");
+    const summary = document.getElementById("booking-summary");
+
+    let selectedDate = 18;
+    let selectedTime = "12:00";
+
+    function updateSummary() {
+      summary.textContent = `${selectedDate} июня, ${selectedTime}`;
+    }
+
+    dateButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        dateButtons.forEach((item) => {
+          item.classList.remove("selected");
+          item.setAttribute("aria-pressed", "false");
+        });
+
+        button.classList.add("selected");
+        button.setAttribute("aria-pressed", "true");
+        selectedDate = Number(button.dataset.date);
+
+        updateSummary();
+      });
+    });
+
+    timeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        timeButtons.forEach((item) => {
+          item.classList.remove("selected");
+          item.setAttribute("aria-pressed", "false");
+        });
+
+        button.classList.add("selected");
+        button.setAttribute("aria-pressed", "true");
+        selectedTime = button.dataset.time;
+
+        updateSummary();
+      });
+    });
+  </script>
 </body>
 </html>
