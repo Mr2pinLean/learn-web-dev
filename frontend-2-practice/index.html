@@ -1,14 +1,129 @@
+
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page">
-      <!-- Перенесите вашу верстку. Удалите статичные данные. Подключите скрипт -->
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор даты и времени — Чёрная борода</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body">
+  <div class="page">
+
+    <header class="header">
+      <a class="logo" href="#" aria-label="На главную">
+        <img class="logo__img" src="images/лого.png" alt="Логотип барбершопа">
+      </a>
+
+      <nav class="nav" aria-label="Главная навигация">
+        <button class="burger" type="button" aria-label="Меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="main">
+
+      <section class="hero">
+        <h1 class="visually-hidden">Выбор даты и времени</h1>
+        <img
+          class="hero__image"
+          src="images/датаивремя.png"
+          alt="Выберите удобную дату и время визита"
+        >
+      </section>
+
+      <section class="booking" aria-label="Выбор даты и времени">
+
+        <section class="calendar" aria-label="Календарь">
+          <div class="calendar__head">
+            <h2 class="calendar__title" id="calendar-title">Загрузка...</h2>
+
+            <div class="calendar__arrows">
+              <button class="calendar__arrow" type="button"
+                aria-label="Предыдущий месяц" id="prev-month">‹</button>
+              <button class="calendar__arrow" type="button"
+                aria-label="Следующий месяц" id="next-month">›</button>
+            </div>
+          </div>
+
+          <ul class="calendar__weekdays">
+            <li>Пн</li>
+            <li>Вт</li>
+            <li>Ср</li>
+            <li>Чт</li>
+            <li>Пт</li>
+            <li>Сб</li>
+            <li>Вс</li>
+          </ul>
+
+          <ul class="calendar__days" id="calendar-days"></ul>
+        </section>
+
+        <section class="slots" aria-label="Доступное время">
+          <h2 class="slots__title">Доступное время</h2>
+
+          <ul class="slots__list" id="slots-list"></ul>
+        </section>
+
+        <div class="bottom-bar">
+          <p class="booking-summary" aria-live="polite">
+            Выбрано: <strong id="booking-summary">Загрузка...</strong>
+          </p>
+          <button class="next-button" id="next-button" type="button">Далее</button>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="logo logo--footer" href="#" aria-label="На главную">
+            <img class="logo__img" src="images/лого.png" alt="Логотип барбершопа">
+          </a>
+        </div>
+
+        <div class="footer__info">
+          <section class="footer__block">
+            <h3 class="footer__heading">Контакты</h3>
+            <p class="footer__text">📍 г. Москва, ул. Садовая, 15</p>
+            <a class="footer__phone" href="tel:+74951234567">
+              📞 +7 495 123 45 67
+            </a>
+          </section>
+
+          <section class="footer__block">
+            <h3 class="footer__heading">Режим работы</h3>
+            <p class="footer__text">Пн–Пт: 9:00–21:00</p>
+            <p class="footer__text">Сб–Вс: 10:00–19:00</p>
+          </section>
+        </div>
+      </div>
+
+      <p class="footer__tagline">
+        Предоставляем услуги и немного стрижём
+      </p>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026. Все права защищены.</p>
+        <a class="footer__link" href="#">Политика конфиденциальности</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
